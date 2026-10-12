@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Facundo Domínguez Vides | Personal Trainer en Córdoba</title>
-<meta name="description" content="Entrenamiento personalizado, grupal, online y semipresencial en Córdoba. Funcional, HIIT, musculación, crosstraining y artes marciales con Facundo Domínguez Vides.">
+<meta name="description" content="Entrenamiento personal, grupal, online y semipresencial en Córdoba. Musculación, funcional, artes marciales, pilates mat y adultos mayores con Facundo Domínguez Vides.">
 <link rel="icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -103,6 +103,19 @@ nav ul.open{display:flex}}
 .plan li{padding-left:1.5rem;position:relative;color:var(--muted)}
 .plan li::before{content:"✔";position:absolute;left:0;color:var(--sky)}
 .note{color:var(--muted);font-size:.9rem;margin-top:1.4rem}
+/* NUEVOS ESTILOS */
+[hidden]{display:none!important}
+.sub{font:400 clamp(1.7rem,4.5vw,2.4rem) var(--display);margin-top:3rem}
+.more{display:inline-block;margin-top:1rem;color:var(--sky);font-weight:600;text-decoration:none}
+.more:hover{text-decoration:underline}
+.wrapseg{flex-wrap:wrap;border-radius:24px}
+.seg button:disabled{opacity:.3;cursor:not-allowed}
+.catdesc{color:var(--muted);margin:-.4rem 0 1.2rem}
+.trial{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;margin-top:2rem;padding:1.4rem 1.6rem;border:2px dashed var(--sky);border-radius:20px}
+.trial b{font:400 1.5rem var(--display);display:block}
+.trial span{color:var(--muted)}
+.hero-logo img.foto{width:min(440px,100%);aspect-ratio:4/5;object-fit:cover;border-radius:24px;border:3px solid var(--sky);box-shadow:0 0 40px rgba(69,160,238,.45);filter:none}
+.about-card img.foto{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px;margin:0 0 1rem}
 /* STEPS */
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.3rem;margin-top:2rem;counter-reset:s}
 .steps div{counter-increment:s;border-top:4px solid var(--purple);padding-top:1rem}
@@ -154,44 +167,48 @@ footer.site a{color:var(--sky)}
   <div class="wrap">
     <div>
       <h1>Tu mejor versión<span>empieza acá</span></h1>
-      <p>Entrenamiento personal en Córdoba, online o mixto. Funcional, HIIT, musculación y artes marciales, con un plan hecho para tu cuerpo, tu horario y tu objetivo. Sin improvisar, sin excusas y con seguimiento real.</p>
+      <p>Entrenamiento personal en Córdoba para todas las edades, de forma presencial, online o mixta. Musculación, funcional, artes marciales, pilates mat y más, con un plan hecho para tu cuerpo, tu horario y tu objetivo. Con seguimiento real, no con rutinas copiadas.</p>
       <div class="cta-row">
         <a class="btn btn-main wa-link" href="#" data-msg="Hola Facundo, quiero agendar mi clase de prueba">Agendar clase de prueba</a>
         <a class="btn btn-line" href="#planes">Ver planes y precios</a>
       </div>
     </div>
+    <!-- FOTO DEL INICIO: cambiá src="logo.png" por el nombre de tu foto (ej. src="facundo-entrenando.jpg") y agregá class="foto" dentro de la etiqueta img -->
     <div class="hero-logo"><img src="logo.png" alt="Logo de Facundo Domínguez Vides, Personal Trainer" width="420" height="420"></div>
   </div>
 </section>
 
 <div class="marquee" aria-hidden="true"><div>
-  FUNCIONAL ✦ PILATES MAT ✦ MUSCULACIÓN ✦ CROSSTRAINING ✦ TAEKWONDO ✦ HIFT ✦ HIIT ✦ KICKBOXING ✦ BOXEO ✦ MUAY THAI ✦ PREPARACIÓN FÍSICA ✦
-  FUNCIONAL ✦ PILATES MAT ✦ MUSCULACIÓN ✦ CROSSTRAINING ✦ TAEKWONDO ✦ HIFT ✦ HIIT ✦ KICKBOXING ✦ BOXEO ✦ MUAY THAI ✦ PREPARACIÓN FÍSICA ✦
+  FUNCIONAL ✦ PILATES MAT ✦ MUSCULACIÓN ✦ CROSSTRAINING ✦ TAEKWONDO ✦ HIFT ✦ HIIT ✦ KICKBOXING ✦ BOXEO ✦ MUAY THAI ✦ PREPARACIÓN FÍSICA ✦ ADULTOS MAYORES ✦
+  FUNCIONAL ✦ PILATES MAT ✦ MUSCULACIÓN ✦ CROSSTRAINING ✦ TAEKWONDO ✦ HIFT ✦ HIIT ✦ KICKBOXING ✦ BOXEO ✦ MUAY THAI ✦ PREPARACIÓN FÍSICA ✦ ADULTOS MAYORES ✦
 </div></div>
 
+<!-- ESTADÍSTICAS: 8 años y 300 alumnos son de EJEMPLO. Cambiá data-n por tus números reales -->
 <div class="stats"><div class="wrap">
   <div><b data-n="8" data-plus>0</b><small>años de experiencia</small></div>
   <div><b data-n="300" data-plus>0</b><small>alumnos entrenados</small></div>
-  <div><b data-n="9">0</b><small>disciplinas dominadas</small></div>
+  <div><b data-n="10">0</b><small>disciplinas para elegir</small></div>
   <div><b data-n="3">0</b><small>modalidades a tu medida</small></div>
 </div></div>
 
 <section class="about" id="sobre-mi">
   <div class="wrap">
     <div class="about-card">
+      <!-- FOTO SOBRE MÍ: cambiá src por tu foto (ej. src="facundo-perfil.jpg") y agregá class="foto" -->
       <img src="logo.png" alt="">
       <p>Coach · Córdoba, Argentina</p>
     </div>
     <div>
       <h2>Hola, soy Facundo</h2>
-      <p class="lead">No entreno cuerpos: entreno personas. Llevo años transformando el físico, la energía y la confianza de gente que empezó igual que vos: con ganas, pero sin saber por dónde arrancar.</p>
-      <p>Combino ciencia del ejercicio con la disciplina de las artes marciales. Eso significa técnica impecable, progresión inteligente y cero lesiones por hacer las cosas mal. Cada sesión tiene un objetivo, y cada plan tiene un porqué.</p>
+      <p class="lead">Entreno personas, no cuerpos. Desde quienes buscan rendir más hasta adultos mayores que quieren moverse con seguridad, mi trabajo es que cada uno avance a su ritmo y lo note en su vida diaria.</p>
+      <p>Combino la base científica de la actividad física con la disciplina de las artes marciales: técnica prolija, progresión inteligente y clases que se sienten distintas desde el primer día. Cada sesión tiene un objetivo y cada plan tiene un porqué.</p>
       <ul class="creds">
         <li>Técnico Universitario en Actividad Física</li>
         <li>Especializado en Funcional / HIIT, CrossTraining Nivel 1 y HIFT</li>
         <li>Instructor de artes marciales: Taekwondo, Kickboxing, Boxeo y Muay Thai</li>
         <li>Entrenador personal e instructor de musculación</li>
         <li>Preparador físico de deportistas</li>
+        <li>Pilates Mat y entrenamiento para adultos mayores</li>
       </ul>
     </div>
   </div>
@@ -200,14 +217,22 @@ footer.site a{color:var(--sky)}
 <section class="services" id="servicios">
   <div class="wrap">
     <h2>Entrená como vos lo necesitás</h2>
-    <p class="lead">Tres modalidades, un mismo estándar: planificación profesional y seguimiento cercano.</p>
+    <p class="lead">Elegí cómo entrenar. En las tres modalidades tenés el mismo estándar: plan profesional, técnica cuidada y seguimiento cercano.</p>
     <div class="grid3">
       <div class="card"><div class="ico">🏋️</div><h3>Presencial</h3><p>Sesiones en Córdoba con corrección técnica en vivo, motivación y ajustes en el momento. La opción más rápida para ver resultados.</p></div>
       <div class="card"><div class="ico">📱</div><h3>Online</h3><p>Rutinas en tu celular, videos de cada ejercicio, controles por WhatsApp y videollamadas. Entrenás donde y cuando quieras, desde cualquier lugar.</p></div>
       <div class="card"><div class="ico">🔄</div><h3>Semipresencial</h3><p>Lo mejor de los dos mundos: algunas sesiones conmigo y el resto guiado a distancia. Ideal si tenés agenda cargada.</p></div>
     </div>
+    <h3 class="sub">¿Qué querés entrenar?</h3>
+    <div class="grid3">
+      <div class="card"><div class="ico">💪</div><h3>Entrenamiento personal</h3><p>Musculación, funcional/HIIT, CrossTraining y HIFT. Para ganar fuerza, bajar grasa y rendir mejor con un plan armado para vos.</p><a class="more" href="#planes" data-pick="personal">Ver planes →</a></div>
+      <div class="card"><div class="ico">🥊</div><h3>Artes marciales</h3><p>Boxeo, kickboxing, muay thai y taekwondo, desde cero o con experiencia. Técnica, cardio y confianza en cada clase.</p><a class="more" href="#planes" data-pick="marciales">Ver planes →</a></div>
+      <div class="card"><div class="ico">🧘</div><h3>Pilates Mat</h3><p>Postura, movilidad, control del centro y respiración, sin máquinas. Ideal para empezar suave o complementar tu entrenamiento.</p><a class="more" href="#planes" data-pick="pilates">Ver planes →</a></div>
+      <div class="card"><div class="ico">🌿</div><h3>Adultos mayores</h3><p>Fuerza, equilibrio y movilidad para moverse con seguridad y mantener la independencia. Clases adaptadas, en grupos reducidos y con atención cercana.</p><a class="more" href="#planes" data-pick="mayores">Ver planes →</a></div>
+      <div class="card"><div class="ico">🏆</div><h3>Preparación física</h3><p>Planificación para deportistas y equipos: fuerza, potencia, velocidad y prevención de lesiones a lo largo de la temporada.</p><a class="more" href="#planes" data-pick="deportistas">Consultar →</a></div>
+    </div>
     <div class="disc" aria-label="Disciplinas">
-      <span>Funcional</span><span>HIIT</span><span>CrossTraining</span><span>HIFT</span><span>Musculación</span><span>Preparación física</span><span>Taekwondo</span><span>Kickboxing</span><span>Boxeo</span><span>Muay Thai</span><span>Pilates Mat</span>
+      <span>Funcional</span><span>HIIT</span><span>CrossTraining</span><span>HIFT</span><span>Musculación</span><span>Preparación física</span><span>Taekwondo</span><span>Kickboxing</span><span>Boxeo</span><span>Muay Thai</span><span>Pilates Mat</span><span>Adultos mayores</span>
     </div>
   </div>
 </section>
@@ -215,7 +240,7 @@ footer.site a{color:var(--sky)}
 <section id="objetivos">
   <div class="wrap">
     <h2>¿Cuál es tu objetivo?</h2>
-    <p class="lead">Sea cual sea, hay un plan para vos. Lo definimos juntos en la primera clase.</p>
+    <p class="lead">Sea cual sea tu punto de partida, hay un plan para vos. En la primera clase lo definimos juntos.</p>
     <div class="goals-list">
       <div><b>Bajar de peso</b><span>Déficit inteligente + entrenamiento que quema y no te agota.</span></div>
       <div><b>Ganar músculo</b><span>Hipertrofia con progresión real y técnica cuidada.</span></div>
@@ -223,6 +248,8 @@ footer.site a{color:var(--sky)}
       <div><b>Aprender a pelear</b><span>Boxeo, kickboxing, muay thai o taekwondo desde cero.</span></div>
       <div><b>Salud y energía</b><span>Movete sin dolor, dormí mejor y sentite fuerte todo el día.</span></div>
       <div><b>Volver a entrenar</b><span>Retomá después de una pausa sin lesionarte.</span></div>
+      <div><b>Moverte con autonomía</b><span>Equilibrio, fuerza y movilidad para el día a día, a cualquier edad.</span></div>
+      <div><b>Mejorar tu postura</b><span>Pilates Mat para ganar movilidad y fortalecer el centro del cuerpo.</span></div>
     </div>
   </div>
 </section>
@@ -230,12 +257,18 @@ footer.site a{color:var(--sky)}
 <section class="pricing" id="planes">
   <div class="wrap">
     <h2>Planes y combos</h2>
-    <p class="lead">Cuanto más tiempo te comprometés, más ahorrás y mejores son tus resultados. Elegí tu formato:</p>
+    <p class="lead">Elegí tu actividad, tu formato y cuántas veces por semana querés entrenar. Cuanto más tiempo te comprometés, más ahorrás.</p>
     <div class="toggles">
-      <div class="seg" role="group" aria-label="Formato"><button aria-pressed="true" data-type="uno">1 a 1</button><button aria-pressed="false" data-type="grupal">Grupal</button></div>
-      <div class="seg" role="group" aria-label="Modalidad"><button aria-pressed="true" data-mode="Presencial">Presencial</button><button aria-pressed="false" data-mode="Online">Online</button><button aria-pressed="false" data-mode="Semipresencial">Semipresencial</button></div>
+      <div class="seg wrapseg" id="g-cat" role="group" aria-label="Actividad"><button aria-pressed="true" data-cat="personal">Entrenamiento personal</button><button aria-pressed="false" data-cat="marciales">Artes marciales</button><button aria-pressed="false" data-cat="pilates">Pilates Mat</button><button aria-pressed="false" data-cat="mayores">Adultos mayores</button><button aria-pressed="false" data-cat="deportistas">Preparación física</button></div>
+    </div>
+    <p class="catdesc" id="catdesc"></p>
+    <div class="toggles" id="opts">
+      <div class="seg" id="g-type" role="group" aria-label="Formato"><button aria-pressed="true" data-type="uno">1 a 1</button><button aria-pressed="false" data-type="grupal">Grupal</button></div>
+      <div class="seg" id="g-mode" role="group" aria-label="Modalidad"><button aria-pressed="true" data-mode="Presencial">Presencial</button><button aria-pressed="false" data-mode="Online">Online</button><button aria-pressed="false" data-mode="Semipresencial">Semipresencial</button></div>
+      <div class="seg" id="g-freq" role="group" aria-label="Frecuencia semanal"><button aria-pressed="false" data-freq="0">2 veces</button><button aria-pressed="true" data-freq="1">3 veces</button><button aria-pressed="false" data-freq="2">Libre</button></div>
     </div>
     <div class="plans" id="plans"></div>
+    <div class="trial"><div><b>¿Todavía no te decidís?</b><span>Probá una clase y armamos tu plan juntos, sin compromiso.</span></div><a class="btn btn-line wa-link" href="#" data-msg="Hola Facundo, quiero agendar una clase de prueba">Agendar clase de prueba</a></div>
     <p class="note">* Precios de ejemplo en pesos argentinos. Consultá disponibilidad de horarios y cupos. Todos los planes incluyen evaluación inicial.</p>
   </div>
 </section>
@@ -268,12 +301,15 @@ footer.site a{color:var(--sky)}
   <div class="wrap faq">
     <h2>Preguntas frecuentes</h2>
     <details><summary>¿Nunca entrené, puedo empezar?</summary><p>Claro. Adapto todo a tu nivel actual. Empezamos por lo básico, con técnica y progresión, sin exigirte más de lo que podés dar.</p></details>
+    <details><summary>¿Qué diferencia hay entre clases 1 a 1 y grupales?</summary><p>En 1 a 1 el plan y la atención son 100% para vos, con horarios más flexibles. En grupal entrenás con otras personas en grupos reducidos, con más energía y un precio más accesible. En ambos hay técnica cuidada y seguimiento.</p></details>
     <details><summary>¿Cuántas veces por semana tengo que entrenar?</summary><p>Depende de tu objetivo y tiempo. Lo habitual es entre 2 y 5 sesiones a la semana. Lo definimos en la evaluación inicial.</p></details>
     <details><summary>¿El entrenamiento online realmente funciona?</summary><p>Sí, si tiene seguimiento. Recibís tu plan, videos y textos explicativos, ajustes semanales y contacto directo conmigo para corregir y motivar.</p></details>
     <details><summary>¿Dónde entrenan las sesiones presenciales?</summary><p>En la ciudad de Córdoba. Coordinamos lugar y horario según tu zona al agendar. Escribime y lo vemos.</p></details>
-    <details><summary>¿Necesito equipamiento?</summary><p>No necesariamente. Presencial trabajamos con lo que hay disponible, y en online adapto el plan a lo que tengas: desde nada hasta un gimnasio completo.</p></details>
-    <details><summary>¿Tengo alguna lesión, puedo entrenar igual?</summary><p>En general sí, adaptando los ejercicios. Contámelo en la evaluación inicial y, si hace falta, te recomiendo consultar antes con tu médico traumatologo o kinesiologo.</p></details>
-    <details><summary>¿Puedo probar antes de contratar?</summary><p>Sí, podés agendar una clase de prueba para conocer la metodología y que armemos la clase de prueba juntos, sin compromiso.</p></details>
+    <details><summary>¿Entrenás a adultos mayores? ¿Hace falta algo para empezar?</summary><p>Sí. Las clases se adaptan a cada persona, con foco en fuerza, equilibrio y movilidad. Recomiendo contar con el visto bueno del médico antes de comenzar, y en la primera clase evaluamos cómo está cada uno.</p></details>
+    <details><summary>¿Necesito experiencia o flexibilidad para hacer Pilates Mat?</summary><p>No. Es apto para todos los niveles. Empezamos por lo básico y avanzás a tu ritmo, sin máquinas ni equipamiento complicado.</p></details>
+    <details><summary>¿Necesito equipamiento?</summary><p>No necesariamente. En presencial trabajamos con lo que hay disponible, y en online adapto el plan a lo que tengas: desde nada hasta un gimnasio completo.</p></details>
+    <details><summary>¿Tengo alguna lesión, puedo entrenar igual?</summary><p>En general sí, adaptando los ejercicios. Contámelo en la evaluación inicial y, si hace falta, te recomiendo consultar antes con tu médico, traumatólogo o kinesiólogo.</p></details>
+    <details><summary>¿Puedo probar antes de contratar?</summary><p>Sí, podés agendar una clase de prueba para conocer la metodología y armar tu plan juntos, sin compromiso.</p></details>
     <details><summary>¿Cómo se paga y puedo pausar o cambiar de plan?</summary><p>Acepto transferencia y efectivo. Los combos se pueden adaptar a tus circunstancias, hablalo conmigo y lo resolvemos.</p></details>
   </div>
 </section>
@@ -281,7 +317,7 @@ footer.site a{color:var(--sky)}
 <section class="final">
   <div class="wrap">
     <h2>Tu cuerpo no cambia solo.<br>Cambialo hoy.</h2>
-    <p class="lead">Cada semana que esperás es una semana menos de resultados. Escribime ahora y agendá tu clase de prueba.</p>
+    <p class="lead">Cada semana que esperás es una semana menos de resultados. Escribime y agendá tu clase de prueba: te asesoro sin compromiso.</p>
     <a class="btn btn-main wa-link" href="#" data-msg="Hola Facundo, quiero empezar a entrenar con vos">Quiero empezar ya</a>
   </div>
 </section>
@@ -297,45 +333,85 @@ footer.site a{color:var(--sky)}
 <script>
 // ====== CONFIGURACIÓN: editá estos datos ======
 const WHATSAPP = "5493878591848"; // código país + área sin 0 + número, sin espacios ni signos
-const PRICES = { // precios de ejemplo en ARS por mes
-  uno:    { Presencial: 120000, Online: 60000, Semipresencial: 85000 },
-  grupal: { Presencial: 45000,  Online: 25000, Semipresencial: 35000 }
+
+// PRECIOS POR MES en pesos argentinos.
+// Cada lista tiene 3 números en este orden: [2 veces por semana, 3 veces por semana, frecuencia libre]
+// !!! SON PRECIOS DE EJEMPLO: cambiá los números por los tuyos.
+//     Cuando lo hagas, borrá también la palabra "de ejemplo" en la nota que está debajo de los planes.
+// Si una combinación no existe (por ejemplo, adultos mayores online), simplemente no la pongas.
+const FREQ = ["2 veces por semana", "3 veces por semana", "Frecuencia libre"];
+const CATS = {
+  personal: { label: "Entrenamiento personal", desc: "Musculación, funcional/HIIT, CrossTraining y HIFT.", prices: {
+    uno:    { Presencial: [100000,140000,190000], Online: [50000,70000,90000],  Semipresencial: [70000,95000,125000] },
+    grupal: { Presencial: [40000,55000,70000],    Online: [22000,30000,38000],  Semipresencial: [30000,42000,54000] } } },
+  marciales: { label: "Artes marciales", desc: "Boxeo, kickboxing, muay thai y taekwondo.", prices: {
+    uno:    { Presencial: [110000,150000,200000], Online: [55000,75000,95000],  Semipresencial: [75000,100000,130000] },
+    grupal: { Presencial: [38000,50000,65000],    Online: [22000,30000,38000],  Semipresencial: [28000,38000,50000] } } },
+  pilates: { label: "Pilates Mat", desc: "Postura, movilidad y control del centro del cuerpo.", prices: {
+    uno:    { Presencial: [90000,125000,160000],  Online: [45000,60000,75000] },
+    grupal: { Presencial: [35000,48000,60000],    Online: [20000,28000,35000] } } },
+  mayores: { label: "Adultos mayores", desc: "Fuerza, equilibrio y movilidad para ganar autonomía, en grupos reducidos.", prices: {
+    uno:    { Presencial: [90000,125000,160000] },
+    grupal: { Presencial: [32000,44000,56000] } } },
+  deportistas: { label: "Preparación física", desc: "Planificación a medida para deportistas y equipos.", prices: null } // sin precio fijo: se consulta
 };
 const COMBOS = [
-  { name: "Mensual",   months: 1, off: 0,  tag: "",              perks: ["Plan personalizado","Evaluación inicial","Seguimiento por WhatsApp"] },
-  { name: "Trimestral",months: 3, off: 10, tag: "Más elegido",   perks: ["Todo lo del mensual","10% de ahorro","Reevaluación mensual de progreso"] },
-  { name: "Semestral", months: 6, off: 20, tag: "Mejor precio",  perks: ["Todo lo del trimestral","20% de ahorro","Plan de nutrición general de apoyo","Prioridad de horarios"] }
+  { name: "Mensual",    months: 1, off: 0,  tag: "",            perks: ["{plan}","Evaluación inicial","Seguimiento por WhatsApp"] },
+  { name: "Trimestral", months: 3, off: 10, tag: "Más elegido", perks: ["Todo lo del mensual","10% de ahorro","Reevaluación mensual de progreso"] },
+  { name: "Semestral",  months: 6, off: 20, tag: "Mejor precio",perks: ["Todo lo del trimestral","20% de ahorro","Pautas generales de hábitos saludables","Prioridad de horarios"] }
 ];
 // ==============================================
-const state = { type: "uno", mode: "Presencial" };
+const state = { cat: "personal", type: "uno", mode: "Presencial", freq: 1 };
 const fmt = n => "$" + Math.round(n).toLocaleString("es-AR");
 const wa = msg => "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg);
+const $ = id => document.getElementById(id);
 
 function render(){
-  const base = PRICES[state.type][state.mode];
+  const cat = CATS[state.cat];
+  $("catdesc").textContent = cat.desc;
+  document.querySelectorAll("#g-cat button").forEach(b => b.setAttribute("aria-pressed", b.dataset.cat === state.cat));
+  $("opts").hidden = !cat.prices;
+  if(!cat.prices){
+    $("plans").innerHTML = `<div class="plan best" style="grid-column:1/-1;align-items:center;text-align:center">
+      <h3>${cat.label}</h3>
+      <p class="catdesc" style="margin:.8rem 0 1.4rem;max-width:56ch">Cada deportista y cada equipo necesitan algo distinto. Evalúo tu disciplina, tu calendario de competencias y tu punto de partida, y armo un plan a medida.</p>
+      <a class="btn btn-main" href="${wa("Hola Facundo, quiero info sobre preparación física para deportistas")}" target="_blank" rel="noopener">Consultar mi plan</a>
+    </div>`;
+    return;
+  }
+  const types = Object.keys(cat.prices);
+  if(!types.includes(state.type)) state.type = types[0];
+  const modes = Object.keys(cat.prices[state.type]);
+  if(!modes.includes(state.mode)) state.mode = modes[0];
+  document.querySelectorAll("#g-type button").forEach(b => { b.disabled = !types.includes(b.dataset.type); b.setAttribute("aria-pressed", b.dataset.type === state.type); });
+  document.querySelectorAll("#g-mode button").forEach(b => { b.disabled = !modes.includes(b.dataset.mode); b.setAttribute("aria-pressed", b.dataset.mode === state.mode); });
+  document.querySelectorAll("#g-freq button").forEach(b => b.setAttribute("aria-pressed", +b.dataset.freq === state.freq));
+
+  const base = cat.prices[state.type][state.mode][state.freq];
   const typeLabel = state.type === "uno" ? "1 a 1" : "Grupal";
-  document.getElementById("plans").innerHTML = COMBOS.map((c,i) => {
+  const first = state.type === "uno" ? "Plan 100% personalizado" : "Grupos reducidos con atención cercana";
+  $("plans").innerHTML = COMBOS.map((c,i) => {
     const monthly = base * (1 - c.off/100);
     const total = monthly * c.months;
-    const msg = `Hola Facundo, quiero el plan ${c.name} ${typeLabel} ${state.mode}`;
+    const msg = `Hola Facundo, quiero el plan ${c.name} de ${cat.label} (${typeLabel}, ${state.mode}, ${FREQ[state.freq]})`;
     return `<div class="plan ${i===1?'best':''}">
       ${c.tag?`<span class="tag">${c.tag}</span>`:""}
       <h3>${c.name}</h3>
       <div class="price">${fmt(monthly)}<small> /mes</small></div>
       <div class="save">${c.off?`Ahorrás ${c.off}% · total ${fmt(total)}`:"Sin permanencia"}</div>
-      <ul>${c.perks.map(p=>`<li>${p}</li>`).join("")}</ul>
+      <ul>${c.perks.map(p=>`<li>${p==="{plan}"?first:p}</li>`).join("")}</ul>
       <a class="btn ${i===1?'btn-main':'btn-line'}" href="${wa(msg)}" target="_blank" rel="noopener">Elegir este plan</a>
     </div>`;
   }).join("");
 }
 document.querySelectorAll(".seg button").forEach(b => b.addEventListener("click", () => {
-  const grp = b.parentElement;
-  grp.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed","false"));
-  b.setAttribute("aria-pressed","true");
+  if(b.dataset.cat) state.cat = b.dataset.cat;
   if(b.dataset.type) state.type = b.dataset.type;
   if(b.dataset.mode) state.mode = b.dataset.mode;
+  if(b.dataset.freq) state.freq = +b.dataset.freq;
   render();
 }));
+document.querySelectorAll("[data-pick]").forEach(a => a.addEventListener("click", () => { state.cat = a.dataset.pick; render(); }));
 render();
 
 document.querySelectorAll(".wa-link").forEach(a => {
