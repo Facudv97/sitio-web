@@ -99,7 +99,9 @@ nav ul.open{display:flex}}
 .plan .price{font:400 3rem var(--display);margin:.6rem 0 0}
 .plan .price small{font:400 1rem var(--body);color:var(--muted)}
 .plan .save{color:var(--sky);font-weight:600;min-height:1.6em}
-.plan ul{list-style:none;margin:1rem 0 1.5rem;display:grid;gap:.5rem;flex:1}
+.plan .price s{display:block;font:400 1.4rem var(--body);color:var(--muted);text-decoration-thickness:2px;margin-bottom:-.2rem}
+.plan .promo{display:inline-block;align-self:flex-start;margin-top:.5rem;background:var(--purple);color:var(--white);font-weight:600;font-size:.85rem;padding:.25rem .8rem;border-radius:999px}
+.plan ul{list-style:none;margin:1rem 0 1.5rem;display:grid;gap:.5rem;flex:1;align-content:start}
 .plan li{padding-left:1.5rem;position:relative;color:var(--muted)}
 .plan li::before{content:"✔";position:absolute;left:0;color:var(--sky)}
 .note{color:var(--muted);font-size:.9rem;margin-top:1.4rem}
@@ -362,6 +364,9 @@ const CATS = {
     grupal: { Presencial: [32000,44000,56000] } } },
   deportistas: { label: "Preparación física", desc: "Planificación a medida para deportistas y equipos.", prices: null } // sin precio fijo: se consulta
 };
+// PROMOCIÓN: activa en true muestra el descuento; en false lo saca. "descuento" es el porcentaje.
+// El precio tachado es el precio normal del plan; el grande, el precio con descuento.
+const PROMO = { activa: true, descuento: 15, texto: "Promo de lanzamiento" };
 const COMBOS = [
   { name: "Mensual",    months: 1, off: 0,  tag: "",            perks: ["{plan}","Evaluación inicial","Seguimiento por WhatsApp"] },
   { name: "Trimestral", months: 3, off: 10, tag: "Más elegido", perks: ["Todo lo del mensual","10% de ahorro","Reevaluación mensual de progreso"] },
@@ -398,14 +403,16 @@ function render(){
   const typeLabel = state.type === "uno" ? "1 a 1" : "Grupal";
   const first = state.type === "uno" ? "Plan 100% personalizado" : "Grupos reducidos con atención cercana";
   $("plans").innerHTML = COMBOS.map((c,i) => {
-    const monthly = base * (1 - c.off/100);
+        const regular = base * (1 - c.off/100);
+    const monthly = PROMO.activa ? regular * (1 - PROMO.descuento/100) : regular;
     const total = monthly * c.months;
     const msg = `Hola Facundo, quiero el plan ${c.name} de ${cat.label} (${typeLabel}, ${state.mode}, ${FREQ[state.freq]})`;
     return `<div class="plan ${i===1?'best':''}">
       ${c.tag?`<span class="tag">${c.tag}</span>`:""}
       <h3>${c.name}</h3>
-      <div class="price">${fmt(monthly)}<small> /mes</small></div>
-      <div class="save">${c.off?`Ahorrás ${c.off}% · total ${fmt(total)}`:"Sin permanencia"}</div>
+           ${PROMO.activa?`<div class="promo">${PROMO.texto}: -${PROMO.descuento}%</div>`:""}
+      <div class="price">${PROMO.activa?`<s>${fmt(regular)}</s>`:""}${fmt(monthly)}<small> /mes</small></div>
+      <div class="save">${c.off?`Combo ${c.off}% de ahorro incluido · total ${fmt(total)}`:"Sin permanencia"}</div>
       <ul>${c.perks.map(p=>`<li>${p==="{plan}"?first:p}</li>`).join("")}</ul>
       <a class="btn ${i===1?'btn-main':'btn-line'}" href="${wa(msg)}" target="_blank" rel="noopener">Elegir este plan</a>
     </div>`;
