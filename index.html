@@ -118,6 +118,19 @@ nav ul.open{display:flex}}
 .trial span{color:var(--muted)}
 .hero-logo img.foto{width:min(540px,100%);aspect-ratio:1/1;object-fit:cover;border-radius:24px;border:3px solid var(--sky);box-shadow:0 0 40px rgba(69,160,238,.45);filter:none}
 .about-card img.foto{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:16px;margin:0 0 1rem}
+/* HIBRIDO */
+.plans.solo{grid-template-columns:minmax(0,440px);justify-content:center}
+.hib{background:linear-gradient(135deg,var(--purple-d),var(--black) 70%);border-block:1px solid var(--purple)}
+.hib-badge{display:inline-block;background:var(--sky);color:var(--black);font-weight:600;font-size:.85rem;padding:.25rem .9rem;border-radius:999px;margin-bottom:1rem}
+.hib-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.2rem;margin:2rem 0}
+.hib-grid .blk{border:2px solid var(--sky);border-radius:20px;padding:1.5rem;background:rgba(0,0,0,.45)}
+.hib-grid .ico{font-size:2.2rem}
+.hib-grid h3{color:var(--sky);margin:.3rem 0 .4rem}
+.hib-grid p{color:var(--muted);font-size:.98rem}
+.hib-grid small{display:inline-block;margin-top:.8rem;background:var(--purple);padding:.15rem .7rem;border-radius:999px;font-weight:600;font-size:.8rem}
+.hib-notes{list-style:none;display:grid;gap:.6rem;margin-bottom:1.8rem}
+.hib-notes li{padding-left:1.7rem;position:relative}
+.hib-notes li::before{content:"✔";position:absolute;left:0;color:var(--sky)}
 /* STEPS */
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.3rem;margin-top:2rem;counter-reset:s}
 .steps div{counter-increment:s;border-top:4px solid var(--purple);padding-top:1rem}
@@ -239,6 +252,7 @@ footer.site a{color:var(--sky)}
       <div class="card"><div class="ico">🧘</div><h3>Pilates Mat</h3><p>Postura, movilidad, control del centro y respiración, sin máquinas. Ideal para empezar suave o complementar tu entrenamiento.</p><a class="more" href="#planes" data-pick="pilates">Ver planes →</a></div>
       <div class="card"><div class="ico">🌿</div><h3>Adultos mayores</h3><p>Fuerza, equilibrio y movilidad para moverse con seguridad y mantener la independencia. Clases adaptadas, en grupos reducidos y con atención cercana.</p><a class="more" href="#planes" data-pick="mayores">Ver planes →</a></div>
       <div class="card"><div class="ico">🏆</div><h3>Preparación física</h3><p>Planificación para deportistas y equipos: fuerza, potencia, velocidad y prevención de lesiones a lo largo de la temporada.</p><a class="more" href="#planes" data-pick="deportistas">Consultar →</a></div>
+            <div class="card"><div class="ico">🔥</div><h3>Entrenamiento híbrido</h3><p>Fuerza, running y una disciplina a tu elección en una misma semana. Para rendir en todo y no aburrirte nunca.</p><a class="more" href="#planes" data-pick="hibrido">Ver planes →</a></div>
     </div>
     <div class="disc" aria-label="Disciplinas">
       <span>Funcional</span><span>HIIT</span><span>CrossTraining</span><span>HIFT</span><span>Musculación</span><span>Preparación física</span><span>Taekwondo</span><span>Kickboxing</span><span>Boxeo</span><span>Muay Thai</span><span>Pilates Mat</span><span>Adultos mayores</span>
@@ -246,7 +260,25 @@ footer.site a{color:var(--sky)}
   </div>
 </section>
 
-<section id="objetivos">
+<section class="hib" id="hibrido">
+  <div class="wrap">
+    <span class="hib-badge">NUEVO · Entrenamiento híbrido</span>
+    <h2>Fuerza + running + una disciplina a tu elección</h2>
+    <p class="lead">Una semana completa en un solo plan: levantás, corrés y sumás la actividad que más te gusta. Más energía, más rendimiento y cero rutina aburrida.</p>
+    <div class="hib-grid">
+      <div class="blk"><div class="ico">💪</div><h3>Días de fuerza</h3><p>Sesiones de fuerza y musculación con técnica supervisada y progresión semana a semana.</p><small>Entrenás conmigo</small></div>
+      <div class="blk"><div class="ico">🏃</div><h3>Días de running</h3><p>Te dejo la programación (ritmos, series y progresión) y la hacés por tu cuenta, a tu horario.</p><small>Programación personalizada</small></div>
+      <div class="blk"><div class="ico">🔥</div><h3>Tu disciplina a elección</h3><p>Artes marciales si entrenás presencial, o funcional/CrossTraining en presencial y online.</p><small>Vos elegís</small></div>
+    </div>
+    <ul class="hib-notes">
+      <li>Podés hacerlo 1 a 1 o en grupo reducido.</li>
+      <li>Combinaciones de 3, 4 o 5 días por semana, para que arme tu semana según tu objetivo.</li>
+      <li>En el running no te acompaño en las salidas: recibís el plan y lo ejecutás por tu cuenta, con seguimiento.</li>
+    </ul>
+    <a class="btn btn-main" href="#planes" data-pick="hibrido">Ver planes híbridos</a>
+  </div>
+</section>
+  <section id="objetivos">
   <div class="wrap">
     <h2>¿Cuál es tu objetivo?</h2>
     <p class="lead">Sea cual sea tu punto de partida, hay un plan para vos. En la primera clase lo definimos juntos.</p>
@@ -266,16 +298,17 @@ footer.site a{color:var(--sky)}
 <section class="pricing" id="planes">
   <div class="wrap">
     <h2>Planes y combos</h2>
-    <p class="lead">Elegí tu actividad, tu formato y cuántas veces por semana querés entrenar. Cuanto más tiempo te comprometés, más ahorrás.</p>
+    <p class="lead">Elegí tu actividad, tu formato y cuántas veces por semana querés entrenar. Pagás mes a mes, sin permanencia.</p>
     <div class="toggles">
-      <div class="seg wrapseg" id="g-cat" role="group" aria-label="Actividad"><button aria-pressed="true" data-cat="personal">Entrenamiento personal</button><button aria-pressed="false" data-cat="marciales">Artes marciales</button><button aria-pressed="false" data-cat="pilates">Pilates Mat</button><button aria-pressed="false" data-cat="mayores">Adultos mayores</button><button aria-pressed="false" data-cat="deportistas">Preparación física</button></div>
+            <div class="seg wrapseg" id="g-cat" role="group" aria-label="Actividad"><button aria-pressed="true" data-cat="personal">Entrenamiento personal</button><button aria-pressed="false" data-cat="hibrido">Entrenamiento híbrido</button><button aria-pressed="false" data-cat="marciales">Artes marciales</button><button aria-pressed="false" data-cat="pilates">Pilates Mat</button><button aria-pressed="false" data-cat="mayores">Adultos mayores</button><button aria-pressed="false" data-cat="deportistas">Preparación física</button></div>
     </div>
     <p class="catdesc" id="catdesc"></p>
     <div class="toggles" id="opts">
       <div class="seg" id="g-type" role="group" aria-label="Formato"><button aria-pressed="true" data-type="uno">1 a 1</button><button aria-pressed="false" data-type="grupal">Grupal</button></div>
       <div class="seg" id="g-mode" role="group" aria-label="Modalidad"><button aria-pressed="true" data-mode="Presencial">Presencial</button><button aria-pressed="false" data-mode="Online">Online</button><button aria-pressed="false" data-mode="Semipresencial">Semipresencial</button></div>
-      <div class="seg" id="g-freq" role="group" aria-label="Frecuencia semanal"><button aria-pressed="false" data-freq="0">2 veces</button><button aria-pressed="true" data-freq="1">3 veces</button><button aria-pressed="false" data-freq="2">Libre</button></div>
-    </div>
+            <div class="seg" id="g-freq" role="group" aria-label="Frecuencia semanal"><button aria-pressed="false" data-freq="0">2 veces</button><button aria-pressed="true" data-freq="1">3 veces</button><button aria-pressed="false" data-freq="2">Libre</button></div>
+      <div class="seg" id="g-third" role="group" aria-label="Tercera disciplina" hidden><button aria-pressed="false" data-third="marciales">Artes marciales</button><button aria-pressed="true" data-third="funcional">Funcional / CrossTraining</button></div>
+        <p class="catdesc" id="weekdesc" hidden></p>
     <div class="plans" id="plans"></div>
     <div class="trial"><div><b>¿Todavía no te decidís?</b><span>Probá una clase y armamos tu plan juntos, sin compromiso.</span></div><a class="btn btn-line wa-link" href="#" data-msg="Hola Facundo, quiero agendar una clase de prueba">Agendar clase de prueba</a></div>
     <p class="note">* Precios de ejemplo en pesos argentinos. Consultá disponibilidad de horarios y cupos. Todos los planes incluyen evaluación inicial.</p>
@@ -343,16 +376,45 @@ footer.site a{color:var(--sky)}
 // ====== CONFIGURACIÓN: editá estos datos ======
 const WHATSAPP = "5493878591848"; // código país + área sin 0 + número, sin espacios ni signos
 
-// PRECIOS POR MES en pesos argentinos.
-// Cada lista tiene 3 números en este orden: [2 veces por semana, 3 veces por semana, frecuencia libre]
+// ---------- QUÉ ESTÁ HABILITADO ----------
+// Para HABILITAR algo más adelante, agregalo a la lista (con comillas, separado por coma). Para inhabilitarlo, sacalo.
+// Los precios de todo siguen guardados más abajo, no se pierde nada.
+const MODALIDADES = {           // modalidades que se muestran en cada actividad
+  personal:  ["Presencial", "Online", "Semipresencial"],
+  hibrido:   ["Presencial", "Online"],
+  marciales: ["Presencial"],     // para sumar online: ["Presencial", "Online"]
+  pilates:   ["Presencial"],     // para sumar online: ["Presencial", "Online"]
+  mayores:   ["Presencial"]
+};
+const COMBOS_HABILITADOS = {    // planes que se muestran en cada actividad
+  personal:  ["Mensual"],        // para sumar el trimestral: ["Mensual", "Trimestral"]
+  hibrido:   ["Mensual"],
+  marciales: ["Mensual"],
+  pilates:   ["Mensual"],
+  mayores:   ["Mensual"]
+};
+
+// ---------- PROMOCIÓN ----------
+// activa en true muestra el descuento; en false lo saca. "descuento" es el porcentaje.
+const PROMO = { activa: true, descuento: 15, texto: "Promo de lanzamiento" };
+
+// ---------- PRECIOS POR MES en pesos argentinos ----------
+// Cada lista tiene 3 números: [2 veces por semana, 3 veces por semana, libre]
+// En entrenamiento híbrido: [3 días, 4 días, 5 días]
 // !!! SON PRECIOS DE EJEMPLO: cambiá los números por los tuyos.
 //     Cuando lo hagas, borrá también la palabra "de ejemplo" en la nota que está debajo de los planes.
-// Si una combinación no existe (por ejemplo, adultos mayores online), simplemente no la pongas.
 const FREQ = ["2 veces por semana", "3 veces por semana", "Frecuencia libre"];
+const THIRD = { marciales: "Artes marciales", funcional: "Funcional / CrossTraining" };
 const CATS = {
   personal: { label: "Entrenamiento personal", desc: "Musculación, funcional/HIIT, CrossTraining y HIFT.", prices: {
     uno:    { Presencial: [100000,140000,190000], Online: [50000,70000,90000],  Semipresencial: [70000,95000,125000] },
     grupal: { Presencial: [40000,55000,70000],    Online: [22000,30000,38000],  Semipresencial: [30000,42000,54000] } } },
+  hibrido: { label: "Entrenamiento híbrido", desc: "Fuerza + running + una disciplina a tu elección, en una misma semana.",
+    freqs: ["3 días", "4 días", "5 días"],
+    semanas: ["1 día de fuerza + 1 de running + 1 a elección", "2 días de fuerza + 1 de running + 1 a elección", "2 días de fuerza + 2 de running + 1 a elección"],
+    prices: {
+    uno:    { Presencial: [130000,170000,210000], Online: [65000,85000,105000], Semipresencial: [90000,120000,150000] },
+    grupal: { Presencial: [55000,70000,85000],    Online: [30000,38000,46000],  Semipresencial: [40000,52000,64000] } } },
   marciales: { label: "Artes marciales", desc: "Boxeo, kickboxing, muay thai y taekwondo.", prices: {
     uno:    { Presencial: [110000,150000,200000], Online: [55000,75000,95000],  Semipresencial: [75000,100000,130000] },
     grupal: { Presencial: [38000,50000,65000],    Online: [22000,30000,38000],  Semipresencial: [28000,38000,50000] } } },
@@ -364,26 +426,25 @@ const CATS = {
     grupal: { Presencial: [32000,44000,56000] } } },
   deportistas: { label: "Preparación física", desc: "Planificación a medida para deportistas y equipos.", prices: null } // sin precio fijo: se consulta
 };
-// PROMOCIÓN: activa en true muestra el descuento; en false lo saca. "descuento" es el porcentaje.
-// El precio tachado es el precio normal del plan; el grande, el precio con descuento.
-const PROMO = { activa: true, descuento: 15, texto: "Promo de lanzamiento" };
 const COMBOS = [
   { name: "Mensual",    months: 1, off: 0,  tag: "",            perks: ["{plan}","Evaluación inicial","Seguimiento por WhatsApp"] },
-  { name: "Bimestral", months: 2, off: 10, tag: "Más elegido", perks: ["Todo lo del mensual","10% de ahorro","Reevaluación mensual de progreso"] },
-  { name: "Trimestral",  months: 3, off: 20, tag: "Mejor precio",perks: ["Todo lo del Bimestral","20% de ahorro","Pautas generales de hábitos saludables","Prioridad de horarios"] }
+  { name: "Trimestral", months: 3, off: 10, tag: "Más elegido", perks: ["Todo lo del mensual","10% de ahorro","Reevaluación mensual de progreso"] },
+  { name: "Semestral",  months: 6, off: 20, tag: "Mejor precio",perks: ["Todo lo del trimestral","20% de ahorro","Pautas generales de hábitos saludables","Prioridad de horarios"] }
 ];
 // ==============================================
-const state = { cat: "personal", type: "uno", mode: "Presencial", freq: 1 };
+const state = { cat: "personal", type: "uno", mode: "Presencial", freq: 1, third: "funcional" };
 const fmt = n => "$" + Math.round(n).toLocaleString("es-AR");
 const wa = msg => "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg);
 const $ = id => document.getElementById(id);
 
 function render(){
-  const cat = CATS[state.cat];
-  $("catdesc").textContent = cat.desc;
+  const cat = CATS[state.cat], hib = state.cat === "hibrido";
   document.querySelectorAll("#g-cat button").forEach(b => b.setAttribute("aria-pressed", b.dataset.cat === state.cat));
   $("opts").hidden = !cat.prices;
+  $("weekdesc").hidden = true;
   if(!cat.prices){
+    $("catdesc").textContent = cat.desc;
+    $("plans").className = "plans";
     $("plans").innerHTML = `<div class="plan best" style="grid-column:1/-1;align-items:center;text-align:center">
       <h3>${cat.label}</h3>
       <p class="catdesc" style="margin:.8rem 0 1.4rem;max-width:56ch">Cada deportista y cada equipo necesitan algo distinto. Evalúo tu disciplina, tu calendario de competencias y tu punto de partida, y armo un plan a medida.</p>
@@ -393,28 +454,50 @@ function render(){
   }
   const types = Object.keys(cat.prices);
   if(!types.includes(state.type)) state.type = types[0];
-  const modes = Object.keys(cat.prices[state.type]);
+  const modes = Object.keys(cat.prices[state.type]).filter(m => MODALIDADES[state.cat].includes(m));
   if(!modes.includes(state.mode)) state.mode = modes[0];
-  document.querySelectorAll("#g-type button").forEach(b => { b.disabled = !types.includes(b.dataset.type); b.setAttribute("aria-pressed", b.dataset.type === state.type); });
-  document.querySelectorAll("#g-mode button").forEach(b => { b.disabled = !modes.includes(b.dataset.mode); b.setAttribute("aria-pressed", b.dataset.mode === state.mode); });
-  document.querySelectorAll("#g-freq button").forEach(b => b.setAttribute("aria-pressed", +b.dataset.freq === state.freq));
+  if(hib && state.mode === "Online" && state.third === "marciales") state.third = "funcional";
+  $("catdesc").textContent = cat.desc + (modes.length === 1 ? " Modalidad: solo " + modes[0].toLowerCase() + "." : "");
+
+  document.querySelectorAll("#g-type button").forEach(b => {
+    b.disabled = !types.includes(b.dataset.type);
+    b.textContent = b.dataset.type === "uno" ? "1 a 1" : (hib ? "Grupo reducido" : "Grupal");
+    b.setAttribute("aria-pressed", b.dataset.type === state.type);
+  });
+  $("g-mode").hidden = modes.length < 2;
+  document.querySelectorAll("#g-mode button").forEach(b => { b.hidden = !modes.includes(b.dataset.mode); b.setAttribute("aria-pressed", b.dataset.mode === state.mode); });
+  const labels = cat.freqs || ["2 veces", "3 veces", "Libre"];
+  document.querySelectorAll("#g-freq button").forEach((b,i) => { b.textContent = labels[i]; b.setAttribute("aria-pressed", +b.dataset.freq === state.freq); });
+  $("g-third").hidden = !hib;
+  document.querySelectorAll("#g-third button").forEach(b => { b.disabled = b.dataset.third === "marciales" && state.mode === "Online"; b.setAttribute("aria-pressed", b.dataset.third === state.third); });
+  if(hib){
+    $("weekdesc").hidden = false;
+    $("weekdesc").textContent = `Tu semana (${cat.freqs[state.freq]}): ${cat.semanas[state.freq]}. En el running te paso la programación y lo hacés por tu cuenta.`;
+  }
 
   const base = cat.prices[state.type][state.mode][state.freq];
-  const typeLabel = state.type === "uno" ? "1 a 1" : "Grupal";
+  const typeLabel = state.type === "uno" ? "1 a 1" : (hib ? "Grupo reducido" : "Grupal");
   const first = state.type === "uno" ? "Plan 100% personalizado" : "Grupos reducidos con atención cercana";
-  $("plans").innerHTML = COMBOS.map((c,i) => {
-        const regular = base * (1 - c.off/100);
+  const combos = COMBOS.filter(c => COMBOS_HABILITADOS[state.cat].includes(c.name));
+  $("plans").className = "plans" + (combos.length === 1 ? " solo" : "");
+  $("plans").innerHTML = combos.map((c,i) => {
+    const best = combos.length === 1 || i === 1;
+    const regular = base * (1 - c.off/100);
     const monthly = PROMO.activa ? regular * (1 - PROMO.descuento/100) : regular;
     const total = monthly * c.months;
-    const msg = `Hola Facundo, quiero el plan ${c.name} de ${cat.label} (${typeLabel}, ${state.mode}, ${FREQ[state.freq]})`;
-    return `<div class="plan ${i===1?'best':''}">
+    const detalle = hib ? `${cat.freqs[state.freq]}, ${THIRD[state.third]}` : FREQ[state.freq];
+    const msg = `Hola Facundo, quiero el plan ${c.name} de ${cat.label} (${typeLabel}, ${state.mode}, ${detalle})`;
+    const perks = hib
+      ? [`Tu semana: ${cat.semanas[state.freq]}`, "Running: programación personalizada, la hacés por tu cuenta", `Disciplina a elección: ${THIRD[state.third]}`, "Evaluación inicial", "Seguimiento por WhatsApp"]
+      : c.perks.map(p => p === "{plan}" ? first : p);
+    return `<div class="plan ${best?'best':''}">
       ${c.tag?`<span class="tag">${c.tag}</span>`:""}
       <h3>${c.name}</h3>
-           ${PROMO.activa?`<div class="promo">${PROMO.texto}: -${PROMO.descuento}%</div>`:""}
+      ${PROMO.activa?`<div class="promo">${PROMO.texto}: -${PROMO.descuento}%</div>`:""}
       <div class="price">${PROMO.activa?`<s>${fmt(regular)}</s>`:""}${fmt(monthly)}<small> /mes</small></div>
       <div class="save">${c.off?`Combo ${c.off}% de ahorro incluido · total ${fmt(total)}`:"Sin permanencia"}</div>
-      <ul>${c.perks.map(p=>`<li>${p==="{plan}"?first:p}</li>`).join("")}</ul>
-      <a class="btn ${i===1?'btn-main':'btn-line'}" href="${wa(msg)}" target="_blank" rel="noopener">Elegir este plan</a>
+      <ul>${perks.map(p=>`<li>${p}</li>`).join("")}</ul>
+      <a class="btn ${best?'btn-main':'btn-line'}" href="${wa(msg)}" target="_blank" rel="noopener">Elegir este plan</a>
     </div>`;
   }).join("");
 }
@@ -423,6 +506,7 @@ document.querySelectorAll(".seg button").forEach(b => b.addEventListener("click"
   if(b.dataset.type) state.type = b.dataset.type;
   if(b.dataset.mode) state.mode = b.dataset.mode;
   if(b.dataset.freq) state.freq = +b.dataset.freq;
+  if(b.dataset.third) state.third = b.dataset.third;
   render();
 }));
 document.querySelectorAll("[data-pick]").forEach(a => a.addEventListener("click", () => { state.cat = a.dataset.pick; render(); }));
