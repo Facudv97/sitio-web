@@ -104,7 +104,7 @@ nav ul.open{display:flex}}
 .plan ul{list-style:none;margin:1rem 0 1.5rem;display:grid;gap:.5rem;flex:1;align-content:start}
 .plan li{padding-left:1.5rem;position:relative;color:var(--muted)}
 .plan li::before{content:"✔";position:absolute;left:0;color:var(--sky)}
-.note{color:var(--muted);font-size:.9rem;margin-top:1.4rem}
+.note{color:var(--muted);font-size:.9rem;margin-top:1.4rem;text-align:center}
 /* NUEVOS ESTILOS */
 [hidden]{display:none!important}
 .sub{font:400 clamp(1.7rem,4.5vw,2.4rem) var(--display);margin-top:3rem}
@@ -113,7 +113,7 @@ nav ul.open{display:flex}}
 .wrapseg{flex-wrap:wrap;border-radius:24px}
 .seg button:disabled{opacity:.3;cursor:not-allowed}
 .catdesc{color:var(--muted);margin:-.4rem 0 1.2rem}
-.trial{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;margin-top:2rem;padding:1.4rem 1.6rem;border:2px dashed var(--sky);border-radius:20px}
+.trial{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;max-width:760px;margin:2rem auto 0;padding:1.4rem 1.6rem;border:2px dashed var(--sky);border-radius:20px}
 .trial b{font:400 1.5rem var(--display);display:block}
 .trial span{color:var(--muted)}
 .hero-logo img.foto{width:min(540px,100%);aspect-ratio:1/1;object-fit:cover;border-radius:24px;border:3px solid var(--sky);box-shadow:0 0 40px rgba(69,160,238,.45);filter:none}
@@ -268,7 +268,7 @@ footer.site a{color:var(--sky)}
     <div class="hib-grid">
       <div class="blk"><div class="ico">💪</div><h3>Días de fuerza</h3><p>Sesiones de fuerza y musculación con técnica supervisada y progresión semana a semana.</p><small>Entrenás conmigo</small></div>
       <div class="blk"><div class="ico">🏃</div><h3>Días de running</h3><p>Te dejo la programación (ritmos, series y progresión) y la hacés por tu cuenta, a tu horario.</p><small>Programación personalizada</small></div>
-      <div class="blk"><div class="ico">🔥</div><h3>Tu disciplina a elección</h3><p>Artes marciales si entrenás presencial, o funcional/CrossTraining en presencial y online.</p><small>Vos elegís</small></div>
+            <div class="blk"><div class="ico">🔥</div><h3>Tu disciplina a elección</h3><p>Funcional/CrossTraining (presencial u online), o artes marciales y Pilates Mat si entrenás presencial.</p><small>Vos elegís</small></div>
     </div>
     <ul class="hib-notes">
       <li>Podés hacerlo 1 a 1 o en grupo reducido.</li>
@@ -307,7 +307,8 @@ footer.site a{color:var(--sky)}
       <div class="seg" id="g-type" role="group" aria-label="Formato"><button aria-pressed="true" data-type="uno">1 a 1</button><button aria-pressed="false" data-type="grupal">Grupal</button></div>
       <div class="seg" id="g-mode" role="group" aria-label="Modalidad"><button aria-pressed="true" data-mode="Presencial">Presencial</button><button aria-pressed="false" data-mode="Online">Online</button><button aria-pressed="false" data-mode="Semipresencial">Semipresencial</button></div>
             <div class="seg" id="g-freq" role="group" aria-label="Frecuencia semanal"><button aria-pressed="false" data-freq="0">2 veces</button><button aria-pressed="true" data-freq="1">3 veces</button><button aria-pressed="false" data-freq="2">Libre</button></div>
-      <div class="seg" id="g-third" role="group" aria-label="Tercera disciplina" hidden><button aria-pressed="false" data-third="marciales">Artes marciales</button><button aria-pressed="true" data-third="funcional">Funcional / CrossTraining</button></div>
+            <div class="seg" id="g-third" role="group" aria-label="Tercera disciplina" hidden><button aria-pressed="false" data-third="marciales">Artes marciales</button><button aria-pressed="false" data-third="pilates">Pilates Mat</button><button aria-pressed="true" data-third="funcional">Funcional / CrossTraining</button></div>
+          </div>
         <p class="catdesc" id="weekdesc" hidden></p>
     <div class="plans" id="plans"></div>
     <div class="trial"><div><b>¿Todavía no te decidís?</b><span>Probá una clase y armamos tu plan juntos, sin compromiso.</span></div><a class="btn btn-line wa-link" href="#" data-msg="Hola Facundo, quiero agendar una clase de prueba">Agendar clase de prueba</a></div>
@@ -404,7 +405,12 @@ const PROMO = { activa: true, descuento: 15, texto: "Promo de lanzamiento" };
 // !!! SON PRECIOS DE EJEMPLO: cambiá los números por los tuyos.
 //     Cuando lo hagas, borrá también la palabra "de ejemplo" en la nota que está debajo de los planes.
 const FREQ = ["2 veces por semana", "3 veces por semana", "Frecuencia libre"];
-const THIRD = { marciales: "Artes marciales", funcional: "Funcional / CrossTraining" };
+const THIRD = { marciales: "Artes marciales", pilates: "Pilates Mat", funcional: "Funcional / CrossTraining" };
+const THIRD_MODALIDADES = {   // en qué modalidades se puede elegir cada disciplina del híbrido
+  funcional: ["Presencial", "Online", "Semipresencial"],
+  marciales: ["Presencial", "Semipresencial"],
+  pilates:   ["Presencial"]     // para sumar pilates online: ["Presencial", "Online"]
+};
 const CATS = {
   personal: { label: "Entrenamiento personal", desc: "Musculación, funcional/HIIT, CrossTraining y HIFT.", prices: {
     uno:    { Presencial: [100000,140000,190000], Online: [50000,70000,90000],  Semipresencial: [70000,95000,125000] },
@@ -447,7 +453,7 @@ function render(){
     $("plans").className = "plans";
     $("plans").innerHTML = `<div class="plan best" style="grid-column:1/-1;align-items:center;text-align:center">
       <h3>${cat.label}</h3>
-      <p class="catdesc" style="margin:.8rem 0 1.4rem;max-width:56ch">Cada deportista y cada equipo necesitan algo distinto. Evalúo tu disciplina, tu calendario de competencias y tu punto de partida, y armo un plan a medida.</p>
+            <p class="catdesc" style="margin:.8rem 0 1.4rem;max-width:56ch">Cada deportista y cada equipo necesitan algo distinto. Evalúo tu disciplina, tu calendario de competencias y tu punto de partida, y armo un plan a medida. Puede ser individual o grupal, presencial, online o semipresencial: los términos y el valor los acordamos juntos según tu caso.</p>
       <a class="btn btn-main" href="${wa("Hola Facundo, quiero info sobre preparación física para deportistas")}" target="_blank" rel="noopener">Consultar mi plan</a>
     </div>`;
     return;
@@ -456,7 +462,7 @@ function render(){
   if(!types.includes(state.type)) state.type = types[0];
   const modes = Object.keys(cat.prices[state.type]).filter(m => MODALIDADES[state.cat].includes(m));
   if(!modes.includes(state.mode)) state.mode = modes[0];
-  if(hib && state.mode === "Online" && state.third === "marciales") state.third = "funcional";
+    if(hib && !THIRD_MODALIDADES[state.third].includes(state.mode)) state.third = "funcional";
   $("catdesc").textContent = cat.desc + (modes.length === 1 ? " Modalidad: solo " + modes[0].toLowerCase() + "." : "");
 
   document.querySelectorAll("#g-type button").forEach(b => {
@@ -469,7 +475,7 @@ function render(){
   const labels = cat.freqs || ["2 veces", "3 veces", "Libre"];
   document.querySelectorAll("#g-freq button").forEach((b,i) => { b.textContent = labels[i]; b.setAttribute("aria-pressed", +b.dataset.freq === state.freq); });
   $("g-third").hidden = !hib;
-  document.querySelectorAll("#g-third button").forEach(b => { b.disabled = b.dataset.third === "marciales" && state.mode === "Online"; b.setAttribute("aria-pressed", b.dataset.third === state.third); });
+    document.querySelectorAll("#g-third button").forEach(b => { b.disabled = !THIRD_MODALIDADES[b.dataset.third].includes(state.mode); b.setAttribute("aria-pressed", b.dataset.third === state.third); });
   if(hib){
     $("weekdesc").hidden = false;
     $("weekdesc").textContent = `Tu semana (${cat.freqs[state.freq]}): ${cat.semanas[state.freq]}. En el running te paso la programación y lo hacés por tu cuenta.`;
